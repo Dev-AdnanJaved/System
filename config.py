@@ -13,8 +13,8 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
 INTERVAL = "15m"
 CANDLE_LIMIT = 500
 
-SCAN_EVERY_SECONDS = 900  # 15 min safe scan
-TOP_VOLUME_COINS = 100     # top 100 coins by volume
+TOP_VOLUME_COINS = 600
+LOOP_INTERVAL_SECONDS = 1200
 
 STATE_FILE = "data/state.json"
 
@@ -22,3 +22,24 @@ STATE_FILE = "data/state.json"
 REQUEST_DELAY_SECONDS = 0.5  # ~2 req/sec
 MAX_RETRIES = 5              # retry API calls if 403 / timeout
 RETRY_DELAY = 5               # seconds between retries
+
+
+# Indicators settings
+ATR_VALUE = 14
+ADX_VALUE = 14
+di_period=14
+adx_period=14
+
+RSI_PERIODS = 14
+MACD_VALUES = {"fast": 12, "slow": 26, "signal": 9}
+EMA_PERIODS = [7, 25, 50, 99, 200]
+
+
+#For Cross Detection Detection
+LOOKBACK_CANDLES = 96  #For cross detection in 48 hours as 192/15=48
+
+#For Volume Detection
+LOOKBACK_VOLUME_CANDLES = 10  # Last 20 Candles Volume to compare with Surge Candles Volume
+SURGE_LENGTH = 4    # Number Of Recent Candles to compare with LookBack Candles of Volume
+BASE_MULTI = 1.35     # The percentage of increase in volume, which triggers passed 
+
