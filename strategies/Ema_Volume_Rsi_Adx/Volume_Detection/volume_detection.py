@@ -120,8 +120,14 @@ def volume_analysis_report(data,
     )
 
     return {
-        "optionA": optionA_pass,
-        "optionB": optionB_pass,
-        "combined": combined_pass,
-        "message": msg
-    }
+    "optionA": optionA_pass,
+    "optionB": optionB_pass,
+    "combined": combined_pass,
+    "recent_avg_volume": avg_recent,
+    "historical_avg_volume": avg_prev,
+    "ema10_baseline": ema10,
+    "volatility": vol_volatility,
+    "dynamic_multiplier": multiplier,
+    "spike_ratio": spike_ratio,
+    "message": msg
+}
