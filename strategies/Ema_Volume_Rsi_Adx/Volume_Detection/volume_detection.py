@@ -23,7 +23,7 @@ def volume_analysis_report(data,
     # -----------------------------------------------------------
     # Extract 15m volume list from provided data
     # -----------------------------------------------------------
-    vols = data['15m']['volume']
+    vols = data['5m']['volume']
 
     # Safety check → ensure enough candles exist
     if len(vols) < surge_len + 5:
@@ -77,8 +77,8 @@ def volume_analysis_report(data,
 
     # --- Dynamic multiplier scaling
     multiplier = base_mult + vol_volatility * 3    # scale with volatility
-    multiplier = min(multiplier, 1.5)             # cap at 3
-    multiplier = max(multiplier, 1.20)            # minimum for stable coins
+    multiplier = min(multiplier, 2)             # cap at 3
+    multiplier = max(multiplier, 1.30)            # minimum for stable coins
 
     threshold = ema10 * multiplier
 

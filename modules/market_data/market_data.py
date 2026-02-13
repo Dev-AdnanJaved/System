@@ -38,7 +38,7 @@ def fetch_klines_multiple(client, symbol, intervals=None, limit=CANDLE_LIMIT):
     Returns a dictionary: {interval: DataFrame}
     """
     if intervals is None:
-        intervals = ["15m", "1h", "4h", "1d"]  # default intervals
+        intervals = ["5m", "15m", "1h", "4h", "1d"]  # default intervals
 
     data = {}
     for interval in intervals:
